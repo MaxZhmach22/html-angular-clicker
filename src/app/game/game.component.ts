@@ -9,15 +9,17 @@ import {Component, OnInit} from '@angular/core';
 export class GameComponent implements OnInit{
 
   ngOnInit(): void {
+    const buildUrl = "assets/demo/Build";
     //@ts-ignore
+
     createUnityInstance(document.querySelector("#unity-canvas"), {
-      dataUrl: "/assets/demo/Build/demo.data",
-      frameworkUrl: "/assets/demo/Build/demo.framework.js",
-      codeUrl: "/assets/demo/Build/demo.wasm",
+      dataUrl: buildUrl + "/dist.data.unityweb",
+      frameworkUrl: buildUrl + "/dist.framework.js.unityweb",
+      codeUrl: buildUrl + "/dist.wasm.unityweb",
       streamingAssetsUrl: "StreamingAssets",
       companyName: "MaxZhmach",
-      productName: "ClickerWebGL",
-      productVersion: "0.0.0.1"
+      productName: "Clicker",
+      productVersion: "0.1",
     });
   }
 }
